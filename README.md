@@ -24,3 +24,7 @@ Table of contents
      3.8 Functional enrichment analysis - R Bioconductor package 'clusterProfiler'
   
      3.9 Coverage track generation and visualisation - deepTools and IGV
+
+1. Overview of the pipeline 
+
+[Picture 1.pdf](https://github.com/tudumanne/ChIP-seq-standard/files/7828134/Picture.1.pdf)
