@@ -2,8 +2,8 @@
 
 This repository contains a customised data analysis pipeline that facilitates simultaneous analysis of ChIP-seq data at ribosomal DNA (rDNA) repeats and genome-wide (For paired-end short read - Illumina data). 
 
-Table of contents 
-1. Overview of the pipeline
+### Table of contents 
+1. Outline
 2. Software installation
 3. How to run - example dataset
   
@@ -24,7 +24,19 @@ Table of contents
      3.8 Functional enrichment analysis - R Bioconductor package 'clusterProfiler'
   
      3.9 Coverage track generation and visualisation - deepTools and IGV
+     
 
-1. Overview of the pipeline 
 
-[Picture 1.pdf](https://github.com/tudumanne/ChIP-seq-standard/files/7828134/Picture.1.pdf)
+### 1. Outline
+
+This pipeline was run on an HPC (high-performance computing) system based on CentOS (Linux). 
+
+chip-seq-script.sh 
+
+![alt text](https://github.com/tudumanne/ChIP-seq-standard/files/7828134/Picture.1.pdf)
+
+2. Software installation 
+
+The following 
+
+
