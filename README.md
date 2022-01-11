@@ -4,7 +4,7 @@ This repository contains a customised data analysis pipeline that facilitates si
 
 ### Table of contents 
 1. [Pipeline overview](#pipeline-overview)
-2. Software installation
+2. [Software installation](#
 3. How to run - example dataset
   
      3.1 Quality check of raw fastq files - FastQC/MultiQC
@@ -30,7 +30,7 @@ The 'Scripts' folder contains template bash scripts and example Snakemake workfl
 
 ![alt text](https://github.com/tudumanne/ChIP-seq-standard/files/7828134/Picture.1.pdf)
 
-2. Software installation 
+### Software installation 
 
 The required software/command-line tools were installed via conda on Linux. 
 
@@ -40,7 +40,7 @@ The required software/command-line tools were installed via conda on Linux.
 conda env create -n chip-seq -f environment.yml
 ```
 
-3. How to run - example dataset
+### How to run - example dataset
 
 The folder 'example dataset' contains 9 ChIPed (H3K4me3) and 9 input control samples, 3 biological replicates per each stage (WT, PreM and Mal).
 
