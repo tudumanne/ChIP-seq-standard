@@ -29,7 +29,7 @@ First part of the pipeline (3.1-3.5) was run on an HPC (high-performance computi
 The 'Scripts' folder contains template bash scripts and example Snakemake workflows.
 
 
-[Picture 1.pdf](https://github.com/tudumanne/ChIP-seq-standard/files/7881847/Picture.1.pdf)
+[](https://github.com/tudumanne/ChIP-seq-standard/files/7881847/Picture.1.pdf)
 
 
 ### Software installation 
