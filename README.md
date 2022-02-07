@@ -2,6 +2,8 @@
 
 This repository contains a customised data analysis pipeline that facilitates simultaneous analysis of ChIP-seq data at ribosomal DNA (rDNA) repeats and genome-wide (For paired-end short read - Illumina data). 
 
+A custom manually masked reference genome was utilised in this analysis to account for the highly repetitive nature of rDNA. The workflow followed in creating custom reference is outlined in https://github.com/tudumanne/custom-reference-mouse.
+
 ### Table of contents 
 1. [Pipeline overview](#pipeline-overview)
 2. [Software installation](#software-installation)
@@ -26,7 +28,7 @@ This repository contains a customised data analysis pipeline that facilitates si
 
 First part of the pipeline (3.1-3.5) was run on an HPC (high-performance computing) system based on CentOS (Linux). R based analyses (3.6-3.7) were carried out in RStudio installed on MacOS Catalina.
 
-The 'Scripts' folder contains template bash scripts and example Snakemake workflows.
+The 'Scripts' folder contains template bash scripts.
 
 
 ![alt text](https://github.com/tudumanne/ChIP-seq-standard/files/7881847/Picture.1.pdf)
