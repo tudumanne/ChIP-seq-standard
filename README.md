@@ -2,7 +2,7 @@
 
 This repository contains a customised data analysis pipeline that facilitates simultaneous analysis of ChIP-seq data at ribosomal DNA (rDNA) repeats and genome-wide (For paired-end short read - Illumina data). 
 
-A custom manually masked reference genome was utilised in this analysis to account for the highly repetitive nature of rDNA. The workflow followed in creating custom reference is outlined in https://github.com/tudumanne/custom-reference-mouse.
+A custom manually masked reference genome was utilised in this analysis to account for the highly repetitive nature of rDNA. The workflow followed in creating a custom reference is outlined in https://github.com/tudumanne/custom-reference-mouse.
 
 ### Table of contents 
 1. [Pipeline overview](#pipeline-overview)
@@ -28,27 +28,28 @@ A custom manually masked reference genome was utilised in this analysis to accou
 
 First part of the pipeline (3.1-3.5) was run on an HPC (high-performance computing) system based on CentOS (Linux). R based analyses (3.6-3.7) were carried out in RStudio installed on MacOS Catalina.
 
-The 'Scripts' folder contains template bash scripts.
+The 'scripts' folder contains template bash scripts and relevant R scripts.
 
 
-![alt text](https://github.com/tudumanne/ChIP-seq-standard/files/7881847/Picture.1.pdf)
+![alt text](https://github.com/tudumanne/ChIP-seq-standard/files/8024283/workflow-standard.pdf)
+
 
 
 ### Software installation 
 
-The required software/command-line tools were installed via conda on Linux. 
+The required command-line tools were installed via conda on Linux. 
 
-(Miniconda https://docs.conda.io/en/latest/miniconda.html)
+Miniconda documentation https://docs.conda.io/en/latest/miniconda.html
+
+- Create an environment named chip-seq using a .yaml file, which defines the tools that need to be installed. 
 
 ```console
-conda env create -n chip-seq -f environment.yml
+conda env create -n chip-seq -f environment.yaml
 ```
 
 ### How to run an example dataset
 
-The folder 'example dataset' contains 9 ChIPed (H3K4me3) and 9 input control samples, 3 biological replicates per each stage (WT, PreM and Mal).
-
-These files contain a subset of reads.  
+The folder 'example dataset' contains 9 ChIPed (H3K4me3) and 9 input control samples (subset of reads), 3 biological replicates per each stage (WT, PreM and Mal).
   
 3.1 Quality check of raw fastq files - FastQC/MultiQC
 
@@ -58,6 +59,7 @@ fastqc -o fastqc --extract --dir fastqc_input --format fastq input_*.fastq.gz
 
 multiqc fastqc_chip/
 ```
+
 3.2 Read alignment, processing and post-alignment quality check - Bowtie2, Samtools and BamQC/MultiQC
 
 Read alignment using Bowtie2, SAM to BAM conversion, sorting and indexing the BAM files using Samtools
@@ -103,13 +105,12 @@ Generate a coverage track normalised to input
 bamCompare -b1 {sample}_sorted.bam -b2 input_WT_rdna_merged.bam -o H3K9ac_WT_rep01_rdna.bw --scaleFactorsMethod None --operation ratio --binSize 10 --normalizeUsing RPKM --smoothLength 25 --extendReads --effectiveGenomeSize 45000 
 ```
 
-Generate a score matrix and a heatmap
+Generate a score matrix and a heatmap/profile for visulising enrichment around TSS
 
 ```console
 computeMatrix scale-regions -S {sample}.bw -R Mus_musculus.GRCm38.102.chr.gtf --regionBodyLength 2000 -b 5000 -a 5000 -o {sample}.mat.gz --skipZeros --missingDataAsZero --metagene
 plotHeatmap -m {sample}.mat.gz --dpi 300 -o {sample}.pdf
 ```
-
 
 3.4 Peak calling (rDNA) - Bamtools and MACS2
 
