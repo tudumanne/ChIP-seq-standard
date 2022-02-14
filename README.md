@@ -102,7 +102,7 @@ bamCoverage -b {sample}_sorted.bam -o {sample}_coverage.bw --outFileFormat bigwi
 Generate a coverage track normalised to input
 
 ```console
-bamCompare -b1 {sample}_sorted.bam -b2 input_WT_rdna_merged.bam -o H3K9ac_WT_rep01_rdna.bw --scaleFactorsMethod None --operation ratio --binSize 10 --normalizeUsing RPKM --smoothLength 25 --extendReads --effectiveGenomeSize 45000 
+bamCompare -b1 {sample}_sorted.bam -b2 input_merged.bam -o {sample}.bw --scaleFactorsMethod None --operation ratio --binSize 10 --normalizeUsing RPKM --smoothLength 25 --extendReads --ignoreForNormalization chrX chrY BK000964.3 chrMT
 ```
 
 Generate a score matrix and a heatmap/profile for visulising enrichment around TSS
