@@ -1,0 +1,13 @@
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - samtools =1.11
+  - bamtools =2.5.1
+  - bowtie2 =2.3.5.1
+  - deeptools =3.4.3
+  - macs2 =2.2.7
+  - bedtools =2.30.0
+  - fastqc =0.11.9
+  - qualimap =2.2.2
+  - multiqc =1.11
