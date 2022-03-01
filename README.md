@@ -2,7 +2,8 @@
 
 This repository contains a customised data analysis pipeline that facilitates simultaneous analysis of ChIP-seq data at ribosomal DNA (rDNA) repeats and genome-wide (For paired-end short read - Illumina data). 
 
-A custom manually masked reference genome was utilised in this analysis to account for the highly repetitive nature of rDNA. The workflow followed in creating a custom reference is outlined in https://github.com/tudumanne/custom-reference-mouse.
+A custom manually masked reference genome was utilised in this analysis to account for the highly repetitive nature of rDNA. 
+The workflow followed in creating a custom reference is outlined in https://github.com/tudumanne/custom-reference-mouse.
 
 ### Table of contents 
 1. [Pipeline overview](#pipeline-overview)
@@ -11,7 +12,7 @@ A custom manually masked reference genome was utilised in this analysis to accou
   
      3.1 Quality check of raw fastq files - FastQC/MultiQC
   
-     3.2 Read alignment, processing and post-alignment quality check - Bowtie2, Samtools and BamQC/MultiQC
+     3.2 Read alignment, processing and post-alignment quality check - Bowtie2, Samtools and Qualimap-BamQC/MultiQC
 
      3.3 Coverage track generation and visualisation - deepTools and IGV
   
@@ -49,7 +50,7 @@ conda env create -n chip-seq -f environment.yaml
 
 ### How to run an example dataset
 
-The folder 'example dataset' contains 9 ChIPed (H3K4me3) and 9 input control samples (subset of reads), 3 biological replicates per each stage (WT, PreM and Mal).
+The folder 'example dataset' contains 6 ChIPed (H3K4me3) and 6 input control samples (subset of reads), 3 biological replicates per each stage (WT and Mal).
   
 3.1 Quality check of raw fastq files - FastQC/MultiQC
 
@@ -60,7 +61,7 @@ fastqc -o fastqc --extract --dir fastqc_input --format fastq input_*.fastq.gz
 multiqc fastqc_chip/
 ```
 
-3.2 Read alignment, processing and post-alignment quality check - Bowtie2, Samtools and BamQC/MultiQC
+3.2 Read alignment, processing and post-alignment quality check - Bowtie2, Samtools and Qualimap-BamQC/MultiQC
 
 Read alignment using Bowtie2, SAM to BAM conversion, sorting and indexing the BAM files using Samtools
 
